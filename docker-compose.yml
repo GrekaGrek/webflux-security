@@ -1,0 +1,16 @@
+version: '3.9'
+services:
+  webflux_db:
+    container_name: webflux_db
+    restart: always
+    image: postgres
+    ports:
+      - '5432:5432'
+    environment:
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_USER: admin
+      POSTGRES_DB: postgres
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+volumes:
+  pgdata: {}
